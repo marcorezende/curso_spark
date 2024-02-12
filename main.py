@@ -21,7 +21,8 @@ for i in range(1, 201):
     person_data = generate_person()
     filename = f"small_file_problem/person_{i}.json"
     with open(filename, "w") as json_file:
-        json.dump(person_data, json_file, indent=4)
+        json.dump(person_data, json_file, separators=(',', ':'))
+        json_file.write('\n')  # Add newline after each JSON object
     print(f"Generated {filename}")
 
 print("All files generated successfully.")
